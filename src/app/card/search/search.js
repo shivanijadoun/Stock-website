@@ -54,11 +54,29 @@ function Search() {
     setModalOpen(false);
   };
 
-  const onHandleClickTrend = (e) => {
+  const onHandleClickTrend = async (e) => {
     const symbol = e.target.innerText;
-    setSearchQuery(symbol);
-    onHandleClick();
+    setSearchQuery(symbol);  // Corrected: use setSearchQuery instead of direct assignment
+    if (!symbol.trim()) {
+      setError("Please enter a valid search query.");
+      return;
+    }
+    setLoading(true);
+    setError(null);
+    setStock(null);
+    setModalOpen(false); // Reset modal state
+  
+    try {
+      const data = await fetchStockData(symbol);
+      setStock(data);
+      setModalOpen(true); // Open modal after successful fetch
+    } catch (err) {
+      setError(err.message || "An error occurred while searching.");
+    } finally {
+      setLoading(false);
+    }
   };
+  
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen px-4 py-6">

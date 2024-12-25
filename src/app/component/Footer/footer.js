@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
           <div className="px-4 py-6 bg-[#f0f9ff] dark:bg-[#007acc] md:flex md:items-center md:justify-between">
             <span className="text-sm text-blue-900 sm:text-center">
-              © 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
+              © 2025 <a href="https://flowbite.com/"></a>. All Rights Reserved.
             </span>
             <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
 {/* Social Media Icons */}
