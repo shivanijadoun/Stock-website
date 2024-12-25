@@ -7,7 +7,7 @@ export async function GET() {
   try {
     const exchange = "US"; // Default to US stocks
     const bestStock = await findWorstPerformingStock(exchange);
-    
+  
     console.log(bestStock)
     if (bestStock) {
       return NextResponse.json({

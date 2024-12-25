@@ -1,8 +1,8 @@
 const FINNHUB_TOKEN = process.env.STOCK_API_KEY;
 
 
-const fetchSymbols = async (exchange) => {
-  const url = `https://finnhub.io/api/v1/stock/symbol?exchange=${exchange}&token=${FINNHUB_TOKEN}`;
+const fetchSymbols = async () => {
+  const url = `https://finnhub.io/api/v1/stock/symbol?exchange=US&token=${FINNHUB_TOKEN}`;
   const response = await fetch(url);
   // console.log(response)
   return response.json();
@@ -188,3 +188,7 @@ const fetchNews =async()=>{
 
       
     export { findBestPerformingStock ,findWorstPerformingStock,findBest10PerformingStock,findSearchStock,fetchNews,fetchChartData,fetchSymbols,find200StockMetrics};
+
+
+
+    // DXLQNT9AAB0YU795
