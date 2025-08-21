@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center font-bold ">
             <Link href="/" className="text-xl font-bold">
-              MyApp
+              Stocks
             </Link>
           </div>
 
