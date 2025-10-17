@@ -14,7 +14,7 @@ export default function Navbar() {
     const fetchMarketData = async () => {
       try {
         const response = await axios.get('/api/navbarapi');
-        console.log(response);
+        // console.log(response);
         const formattedData = response.data.map((item) => ({
           symbol: item.symbol,
           price: item.data.c, // Current price

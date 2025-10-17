@@ -16,7 +16,7 @@ export default function StockCard() {
     const fetchStock = async () => {
       try {
         const response = await axios.get('/api/top20stocks');
-        console.log(response.data);
+        // console.log(response.data);
         if (response.status === 200) {
           setStocks(response.data);
         } else {

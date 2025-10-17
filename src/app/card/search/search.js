@@ -195,7 +195,7 @@ function Search() {
   </div>
 </div>   */}
 
-      {stock && modalOpen && (
+      {/* {stock && modalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-4 md:p-6 rounded-md shadow-lg w-full max-w-[90%] sm:max-w-lg h-auto max-h-[80vh] overflow-y-auto relative">
             <button
@@ -205,6 +205,8 @@ function Search() {
               Close
             </button>
             <h3 className="text-xl font-semibold mb-4">
+
+
               Metrics for {stock.symbol}
             </h3>
             {stock.metric ? (
@@ -222,7 +224,40 @@ function Search() {
             )}
           </div>
         </div>
+      )} */}
+      {stock && modalOpen && (
+  <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+    <div
+      role="dialog"
+      aria-modal="true"
+      className="bg-white p-4 md:p-6 rounded-md shadow-lg w-full max-w-[90%] sm:max-w-lg h-auto max-h-[80vh] overflow-y-auto relative"
+    >
+      <button
+        onClick={closeModal}
+        className="absolute top-4 right-4 bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600"
+      >
+        Close
+      </button>
+
+      <h3 className="text-xl font-semibold mb-4">Metrics for {stock.symbol}</h3>
+
+      {stock.metric ? (
+        <ul className="list-disc pl-5">
+          {Object.entries(stock.metric).map(([key, value]) => (
+            <li key={key} className="text-sm text-gray-700">
+              {key.replace(/_/g, " ")}: {value}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-sm text-gray-700">
+          No metrics available for this stock.
+        </p>
       )}
+    </div>
+  </div>
+)}
+
     </div>
   );
 }

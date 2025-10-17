@@ -18,7 +18,7 @@ export default function StockApi() {
     const fetchNews = async () => {
       try {
         const response = await axios.get('/api/newsapi');
-        console.log(response.data);
+        // console.log(response.data);
         if (response.status === 200 && Array.isArray(response.data)) {
           setNews(response.data);
         } else {
